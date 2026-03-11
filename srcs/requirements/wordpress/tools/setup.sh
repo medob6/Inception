@@ -49,5 +49,7 @@ if [ ! -f "/var/www/html/wp-config.php" ]; then
 
 fi
 
+chown -R nobody:nobody /var/www/html
+
 # launch php-fpm in foreground — this becomes PID 1
 exec php-fpm82 -F

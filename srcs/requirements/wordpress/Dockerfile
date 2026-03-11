@@ -19,7 +19,8 @@ RUN apk add --no-cache \
     php82-tokenizer \
     wget \
     curl \
-    unzip
+    unzip \
+    mariadb-client
 
 RUN echo "memory_limit=256M" > /etc/php82/conf.d/memory.ini
 RUN ln -s /usr/bin/php82 /usr/bin/php
