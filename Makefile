@@ -1,8 +1,8 @@
 COMPOSE_FILE = srcs/docker-compose.yml
 
 all:
-	mkdir -p /home/mbousset/data/db
-	mkdir -p /home/mbousset/data/wordpress
+	mkdir -p /home/medob6/data/db
+	mkdir -p /home/medob6/data/wordpress
 	docker compose -f $(COMPOSE_FILE) up --build
 
 build:
