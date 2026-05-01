@@ -1,0 +1,143 @@
+<svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgHero" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050508"/>
+      <stop offset="60%" stop-color="#080810"/>
+      <stop offset="100%" stop-color="#0d0d18"/>
+    </linearGradient>
+    <radialGradient id="glowC" cx="70%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowP" cx="20%" cy="60%" r="40%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gridFade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0.01"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#00d4ff" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#7c3aed" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow2">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="15" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="600" fill="url(#bgHero)"/>
+  <rect width="1200" height="600" fill="url(#glowC)"/>
+  <rect width="1200" height="600" fill="url(#glowP)"/>
+
+  <!-- Perspective grid floor -->
+  <g opacity="1">
+    <!-- Horizontal grid lines (perspective) -->
+    <line x1="0" y1="600" x2="1200" y2="600" stroke="url(#gridFade)" stroke-width="1"/>
+    <line x1="100" y1="520" x2="1100" y2="520" stroke="url(#gridFade)" stroke-width="0.8"/>
+    <line x1="200" y1="460" x2="1000" y2="460" stroke="url(#gridFade)" stroke-width="0.7"/>
+    <line x1="280" y1="415" x2="920" y2="415" stroke="url(#gridFade)" stroke-width="0.6"/>
+    <line x1="340" y1="380" x2="860" y2="380" stroke="url(#gridFade)" stroke-width="0.5"/>
+    <line x1="390" y1="353" x2="810" y2="353" stroke="url(#gridFade)" stroke-width="0.4"/>
+    <line x1="430" y1="331" x2="770" y2="331" stroke="url(#gridFade)" stroke-width="0.3"/>
+    <!-- Vertical grid lines (converging to horizon point ~600,310) -->
+    <line x1="600" y1="310" x2="0" y2="600" stroke="url(#gridFade)" stroke-width="0.6"/>
+    <line x1="600" y1="310" x2="120" y2="600" stroke="url(#gridFade)" stroke-width="0.6"/>
+    <line x1="600" y1="310" x2="240" y2="600" stroke="url(#gridFade)" stroke-width="0.6"/>
+    <line x1="600" y1="310" x2="360" y2="600" stroke="url(#gridFade)" stroke-width="0.6"/>
+    <line x1="600" y1="310" x2="480" y2="600" stroke="url(#gridFade)" stroke-width="0.6"/>
+    <line x1="600" y1="310" x2="600" y2="600" stroke="url(#gridFade)" stroke-width="0.6"/>
+    <line x1="600" y1="310" x2="720" y2="600" stroke="url(#gridFade)" stroke-width="0.6"/>
+    <line x1="600" y1="310" x2="840" y2="600" stroke="url(#gridFade)" stroke-width="0.6"/>
+    <line x1="600" y1="310" x2="960" y2="600" stroke="url(#gridFade)" stroke-width="0.6"/>
+    <line x1="600" y1="310" x2="1080" y2="600" stroke="url(#gridFade)" stroke-width="0.6"/>
+    <line x1="600" y1="310" x2="1200" y2="600" stroke="url(#gridFade)" stroke-width="0.6"/>
+  </g>
+
+  <!-- Floating geometric shapes -->
+  <!-- Large hex right -->
+  <polygon points="920,80 980,115 980,185 920,220 860,185 860,115"
+    fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.25" filter="url(#glow2)"/>
+  <polygon points="920,100 960,122 960,168 920,190 880,168 880,122"
+    fill="none" stroke="#00d4ff" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Small hex left -->
+  <polygon points="180,140 210,157 210,193 180,210 150,193 150,157"
+    fill="none" stroke="#7c3aed" stroke-width="1" opacity="0.4" filter="url(#glow2)"/>
+
+  <!-- Circuit-like nodes and lines -->
+  <g opacity="0.35" stroke="#00d4ff" stroke-width="1" fill="#00d4ff" filter="url(#glow2)">
+    <circle cx="900" cy="180" r="4"/>
+    <circle cx="960" cy="220" r="3"/>
+    <circle cx="1050" cy="160" r="4"/>
+    <circle cx="1100" cy="200" r="2.5"/>
+    <line x1="900" y1="180" x2="960" y2="220"/>
+    <line x1="960" y1="220" x2="1050" y2="160"/>
+    <line x1="1050" y1="160" x2="1100" y2="200"/>
+    <line x1="900" y1="180" x2="1050" y2="160"/>
+  </g>
+
+  <g opacity="0.25" stroke="#7c3aed" stroke-width="1" fill="#7c3aed">
+    <circle cx="150" cy="200" r="3"/>
+    <circle cx="220" cy="260" r="2.5"/>
+    <circle cx="100" cy="300" r="3.5"/>
+    <circle cx="280" cy="180" r="2"/>
+    <line x1="150" y1="200" x2="220" y2="260"/>
+    <line x1="220" y1="260" x2="100" y2="300"/>
+    <line x1="150" y1="200" x2="280" y2="180"/>
+  </g>
+
+  <!-- Central glowing orb -->
+  <circle cx="600" cy="280" r="80" fill="#00d4ff" opacity="0.03" filter="url(#softglow)"/>
+  <circle cx="600" cy="280" r="40" fill="#00d4ff" opacity="0.05" filter="url(#softglow)"/>
+  <circle cx="600" cy="280" r="3" fill="#00d4ff" opacity="0.8" filter="url(#glow2)"/>
+
+  <!-- Horizontal scan line -->
+  <line x1="0" y1="310" x2="1200" y2="310" stroke="url(#lineGrad)" stroke-width="1"/>
+
+  <!-- Floating code snippets -->
+  <g font-family="'Courier New', monospace" font-size="11" fill="#00d4ff" opacity="0.18">
+    <text x="850" y="270">void *render_frame(t_game *g)</text>
+    <text x="850" y="287">{'{'} dda_raycast(g); {'}'}</text>
+    <text x="850" y="310">// DDA Algorithm</text>
+  </g>
+  <g font-family="'Courier New', monospace" font-size="11" fill="#7c3aed" opacity="0.18">
+    <text x="50" y="360">func FetchPokemon(url string)</text>
+    <text x="50" y="377">go routines | channels</text>
+  </g>
+  <g font-family="'Courier New', monospace" font-size="10" fill="#00ff88" opacity="0.15">
+    <text x="350" y="250">$ ./minishell</text>
+    <text x="350" y="265">minishell$ echo $PATH</text>
+  </g>
+
+  <!-- Right side binary -->
+  <g font-family="'Courier New', monospace" font-size="9" fill="#00d4ff" opacity="0.08">
+    <text x="1100" y="100">01001101</text>
+    <text x="1100" y="115">01000010</text>
+    <text x="1100" y="130">00110001</text>
+    <text x="1100" y="145">00110111</text>
+    <text x="1100" y="160">00110011</text>
+    <text x="1100" y="175">00110111</text>
+  </g>
+
+  <!-- Stars/particles -->
+  <g fill="white">
+    <circle cx="50" cy="50" r="1" opacity="0.4"/>
+    <circle cx="150" cy="30" r="0.8" opacity="0.3"/>
+    <circle cx="300" cy="70" r="1" opacity="0.3"/>
+    <circle cx="500" cy="40" r="0.8" opacity="0.4"/>
+    <circle cx="700" cy="20" r="1" opacity="0.3"/>
+    <circle cx="900" cy="50" r="0.8" opacity="0.35"/>
+    <circle cx="1050" cy="30" r="1" opacity="0.3"/>
+    <circle cx="1150" cy="80" r="0.8" opacity="0.25"/>
+    <circle cx="400" cy="100" r="0.6" opacity="0.3"/>
+    <circle cx="800" cy="90" r="0.7" opacity="0.25"/>
+  </g>
+</svg>

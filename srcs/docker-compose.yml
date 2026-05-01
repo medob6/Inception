@@ -1,6 +1,39 @@
 services:
+
+  mariadb:
+    build: requirements/mariadb
+    image: mariadb:inception
+    container_name: mariadb
+    volumes:
+      - db:/var/lib/mysql
+    networks:
+      - inception
+    env_file: .env
+    secrets:
+      - db_password
+      - db_root_password
+    restart: always
+  wordpress:
+    build: requirements/wordpress
+    image: wordpress:inception
+    container_name: wordpress
+    volumes:
+      - wordpress:/var/www/html
+    networks:
+      - inception
+    depends_on:
+      - mariadb
+      - redis
+    env_file: .env
+    secrets:
+      - db_password
+      - wp_admin_password
+      - wp_user_password
+    restart: always
   nginx:
-    build: ./requirements/nginx
+    build: requirements/nginx
+    image: nginx:inception
+    container_name: nginx
     ports:
       - "443:443"
     volumes:
@@ -10,41 +43,93 @@ services:
     depends_on:
       - wordpress
     restart: always
-
-  wordpress:
-    build: ./requirements/wordpress
+  redis:
+    build: requirements/bonus/redis
+    image: redis:inception
+    container_name: redis
+    networks:
+      - inception
+    restart: always
+  ftp:
+    build: requirements/bonus/ftp
+    image: ftp:inception
+    container_name: ftp
+    ports:
+      - "21:21"
+      - "30000-30009:30000-30009"
     volumes:
-      - wordpress:/var/www/html
+      - wordpress:/home/ftpuser/www
+    networks:
+      - inception
+    env_file: .env
+    secrets:
+      - ftp_password
+    restart: always
+  website:
+    build: requirements/bonus/website
+    image: website:inception
+    container_name: website
+    ports:
+      - "3000:3000"
+    networks:
+      - inception
+    restart: always
+  adminer:
+    build: requirements/bonus/adminer
+    image: adminer:inception
+    container_name: adminer
     networks:
       - inception
     depends_on:
       - mariadb
-    env_file: .env
     restart: always
-
-  mariadb:
-    build: ./requirements/mariadb
+  cadvisor:
+    build: requirements/bonus/cadvisor
+    image: cadvisor:inception
+    container_name: cadvisor
+    ports:
+      - "8080:8080"
     volumes:
-      - db:/var/lib/mysql
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
     networks:
       - inception
-    env_file: .env
     restart: always
+
 
 volumes:
   wordpress:
     driver: local
+    name: wordpress
     driver_opts:
       type: none
       o: bind
       device: /home/mbousset/data/wordpress
   db:
     driver: local
+    name: db
     driver_opts:
       type: none
       o: bind
       device: /home/mbousset/data/db
 
+
+
+secrets:
+  db_password:
+    file: ../secrets/db_password.txt
+  db_root_password:
+    file: ../secrets/db_root_password.txt
+  wp_admin_password:
+    file: ../secrets/wp_admin_password.txt
+  wp_user_password:
+    file: ../secrets/wp_user_password.txt
+  ftp_password:
+    file: ../secrets/ftp_password.txt
 networks:
   inception:
+    name: inception
     driver: bridge
+

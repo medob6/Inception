@@ -1,4 +1,4 @@
-FROM alpine:3.20
+FROM alpine:3.22
 
 # installing nginx and openssl in alpine image
 RUN apk add --no-cache nginx openssl
@@ -17,7 +17,5 @@ COPY conf/nginx.conf /etc/nginx/nginx.conf
 # or by using docker compose file to specify the port mapping
 # and we can specify multiple ports if we want to listen to both http and https
 EXPOSE 443
-
-# the difrence between CMD and ENTRYPOINT is that CMD can be override when u run the container but ENTRYPOINT can't be override and will always run the command specified in it.
 
 CMD ["nginx", "-g", "daemon off;"]

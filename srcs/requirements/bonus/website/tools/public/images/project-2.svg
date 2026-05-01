@@ -1,0 +1,109 @@
+<svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080810"/>
+      <stop offset="100%" stop-color="#0d0d1a"/>
+    </linearGradient>
+    <filter id="glow2f">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="crtScan" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00ff88" stop-opacity="0.03"/>
+      <stop offset="50%" stop-color="#00ff88" stop-opacity="0.01"/>
+      <stop offset="100%" stop-color="#00ff88" stop-opacity="0.03"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="340" fill="url(#bg2)" rx="8"/>
+
+  <!-- Window chrome -->
+  <rect width="600" height="28" fill="#111118" rx="8"/>
+  <rect y="8" width="600" height="20" fill="#111118"/>
+  <circle cx="18" cy="14" r="5" fill="#ff5f57"/>
+  <circle cx="34" cy="14" r="5" fill="#ffbd2e"/>
+  <circle cx="50" cy="14" r="5" fill="#28ca41"/>
+  <text x="300" y="19" font-family="'Courier New', monospace" font-size="10"
+    fill="#4a5568" text-anchor="middle">minishell — bash-compatible shell [C]</text>
+
+  <!-- Terminal body -->
+  <rect x="0" y="28" width="600" height="312" fill="#060608"/>
+  <rect x="0" y="28" width="600" height="312" fill="url(#crtScan)"/>
+
+  <!-- Terminal content -->
+  <g font-family="'Courier New', monospace" font-size="12.5">
+    <!-- Line 1 -->
+    <text x="20" y="60" fill="#4a5568">Last login: Mon Apr 28 09:14:22 2025</text>
+    <!-- Prompt + command -->
+    <text x="20" y="84">
+      <tspan fill="#00ff88">mbousset</tspan>
+      <tspan fill="#4a5568">@</tspan>
+      <tspan fill="#00d4ff">42school</tspan>
+      <tspan fill="#4a5568">:</tspan>
+      <tspan fill="#7c3aed">~/minishell</tspan>
+      <tspan fill="#e2e8f0">$ </tspan>
+      <tspan fill="#e2e8f0">./minishell</tspan>
+    </text>
+
+    <!-- Shell output -->
+    <text x="20" y="108" fill="#4a5568">minishell v1.0 — 42/1337 school project</text>
+
+    <text x="20" y="132">
+      <tspan fill="#00ff88">minishell</tspan>
+      <tspan fill="#e2e8f0">$ </tspan>
+      <tspan fill="#e2e8f0">echo "Hello, World!" | cat -e</tspan>
+    </text>
+    <text x="20" y="152" fill="#e2e8f0">Hello, World!$</text>
+
+    <text x="20" y="176">
+      <tspan fill="#00ff88">minishell</tspan>
+      <tspan fill="#e2e8f0">$ </tspan>
+      <tspan fill="#e2e8f0">ls -la | grep ".c" > output.txt</tspan>
+    </text>
+    <text x="20" y="196" fill="#e2e8f0"></text>
+
+    <text x="20" y="220">
+      <tspan fill="#00ff88">minishell</tspan>
+      <tspan fill="#e2e8f0">$ </tspan>
+      <tspan fill="#e2e8f0">export MY_VAR="1337"</tspan>
+    </text>
+
+    <text x="20" y="244">
+      <tspan fill="#00ff88">minishell</tspan>
+      <tspan fill="#e2e8f0">$ </tspan>
+      <tspan fill="#e2e8f0">echo $MY_VAR</tspan>
+    </text>
+    <text x="20" y="264" fill="#e2e8f0">1337</text>
+
+    <text x="20" y="288">
+      <tspan fill="#00ff88">minishell</tspan>
+      <tspan fill="#e2e8f0">$ </tspan>
+      <tspan fill="#e2e8f0">exit 0</tspan>
+    </text>
+
+    <!-- Prompt waiting -->
+    <text x="20" y="312">
+      <tspan fill="#00ff88">mbousset</tspan>
+      <tspan fill="#4a5568">@</tspan>
+      <tspan fill="#00d4ff">42school</tspan>
+      <tspan fill="#4a5568">:</tspan>
+      <tspan fill="#7c3aed">~/minishell</tspan>
+      <tspan fill="#e2e8f0">$ </tspan>
+      <!-- Blinking cursor -->
+      <tspan fill="#e2e8f0" filter="url(#glow2f)">▋</tspan>
+    </text>
+  </g>
+
+  <!-- Side decorations -->
+  <g opacity="0.06" stroke="#00ff88" stroke-width="0.5">
+    <line x1="580" y1="28" x2="580" y2="340"/>
+  </g>
+
+  <!-- Feature badges -->
+  <g font-family="'Courier New', monospace" font-size="9" fill="#00ff88" opacity="0.5">
+    <text x="430" y="100">// pipes &amp; redirects</text>
+    <text x="430" y="115">// env variables</text>
+    <text x="430" y="130">// builtins: cd echo</text>
+    <text x="430" y="145">// env export unset</text>
+  </g>
+</svg>

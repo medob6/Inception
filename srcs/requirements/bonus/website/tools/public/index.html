@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mohamed Boussetta — Software Engineer. Systems programmer, 42/1337 Network graduate, ALX Backend Engineering alumnus. C, Go, Python, Linux.">
+  <title>Mohamed Boussetta — Software Engineer</title>
+  <link rel="stylesheet" href="/website/style.css">
+</head>
+<body>
+
+  <!-- Particle canvas background -->
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Home">
+        <span class="logo-bracket">[</span>MB<span class="logo-bracket">]</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navMenu" role="list">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#timeline" class="nav-link">Journey</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li>
+          <a href="https://github.com/medob6" class="nav-cta" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            GitHub
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ── HERO ─────────────────────────────────────── -->
+    <section id="hero" aria-label="Introduction">
+      <div class="hero-bg-image" aria-hidden="true">
+        <img src="/website/images/hero.svg" alt="" width="1200" height="600" loading="eager">
+      </div>
+      <div class="hero-content reveal">
+        <p class="hero-eyebrow">
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          Available for opportunities
+        </p>
+        <h1 class="hero-name">
+          <span class="name-line">Mohamed</span>
+          <span class="name-line accent">Boussetta</span>
+        </h1>
+        <p class="hero-role">
+          <span class="typed-prefix">$ whoami</span>
+          <span class="typed-output" id="typedText" aria-live="polite"></span>
+        </p>
+        <p class="hero-tagline">
+          Systems programmer forged at <strong>42 / 1337 School</strong> &amp; <strong>ALX</strong>.<br>
+          Building performant software from the metal up.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            View My Work
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+        </div>
+        <div class="hero-stats" aria-label="Quick stats">
+          <div class="stat">
+            <span class="stat-num">26</span>
+            <span class="stat-label">Repos</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat">
+            <span class="stat-num">5+</span>
+            <span class="stat-label">Languages</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat">
+            <span class="stat-num">2</span>
+            <span class="stat-label">Programs</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-avatar reveal-right">
+        <div class="avatar-ring" aria-hidden="true"></div>
+        <img src="images/avatar.svg" alt="Mohamed Boussetta - Software Engineer" width="320" height="320" loading="eager">
+      </div>
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span>scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ── ABOUT ─────────────────────────────────────── -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="section-label reveal">
+          <span class="label-num">01</span>
+          <span class="label-line" aria-hidden="true"></span>
+          <span class="label-text">About Me</span>
+        </div>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <h2 id="about-heading">
+              Building from the<br>
+              <span class="accent">ground up.</span>
+            </h2>
+            <p>
+              I'm Mohamed Boussetta, a software engineer from <strong>Dakhla, Morocco</strong> who cuts to the metal. My foundation was built through the rigorous <strong>42 / 1337 Network</strong> curriculum — mastering algorithms, Unix systems, memory management, and the mindset of a real engineer.
+            </p>
+            <p>
+              I completed the <strong>ALX Backend Engineering Program</strong>, where I went deep on backend systems, APIs, and production-grade development. Today I write <strong>C, C++, Go, Python, and JavaScript</strong>, and I love the intersection of low-level performance and clean architecture.
+            </p>
+            <p>
+              Once I understood pointers, nothing was ever magic again. Once I mastered Go, picking up any language became effortless. That's the philosophy I bring to every project: understand the fundamentals, and the rest follows.
+            </p>
+            <div class="about-links">
+              <a href="https://linkedin.com/in/mohamed-boussetta-913609280/" class="about-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>
+                </svg>
+                LinkedIn
+              </a>
+              <a href="https://x.com/Mohamed30155499" class="about-link" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter) profile">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+                Twitter / X
+              </a>
+              <a href="mailto:mohamedboussetta601@gmail.com" class="about-link" aria-label="Email me">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+                Email
+              </a>
+            </div>
+          </div>
+          <div class="about-card reveal-right">
+            <div class="card-terminal" aria-label="Profile card">
+              <div class="terminal-header" aria-hidden="true">
+                <div class="terminal-dots">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                </div>
+                <span class="terminal-title">whoami.sh</span>
+              </div>
+              <div class="terminal-body">
+                <pre class="terminal-code"><code><span class="tk-comment">#!/bin/bash</span>
+<span class="tk-key">NAME</span>=<span class="tk-str">"Mohamed Boussetta"</span>
+<span class="tk-key">HANDLE</span>=<span class="tk-str">"medob6"</span>
+<span class="tk-key">LOCATION</span>=<span class="tk-str">"Morocco 🇲🇦"</span>
+<span class="tk-key">SCHOOL</span>=<span class="tk-str">"42 / 1337 Network"</span>
+<span class="tk-key">ALX</span>=<span class="tk-str">"Backend Engineering ✓"</span>
+
+<span class="tk-key">FOCUS</span>=<span class="tk-str">"Systems · Backend · APIs"</span>
+<span class="tk-key">STATUS</span>=<span class="tk-str">"Open to opportunities"</span>
+
+<span class="tk-fn">echo</span> <span class="tk-str">"Ready to ship."</span></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SKILLS ─────────────────────────────────────── -->
+    <section id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="section-label reveal">
+          <span class="label-num">02</span>
+          <span class="label-line" aria-hidden="true"></span>
+          <span class="label-text">Skills</span>
+        </div>
+        <h2 id="skills-heading" class="section-title reveal">The Toolbox.</h2>
+
+        <div class="skills-grid">
+          <!-- Languages -->
+          <div class="skill-group reveal">
+            <h3 class="skill-group-title">
+              <span class="group-icon" aria-hidden="true">⚡</span>
+              Languages
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag tag-primary">C</span>
+              <span class="skill-tag tag-primary">C++</span>
+              <span class="skill-tag tag-go">Go</span>
+              <span class="skill-tag tag-python">Python</span>
+              <span class="skill-tag tag-js">JavaScript</span>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="skill-group reveal">
+            <h3 class="skill-group-title">
+              <span class="group-icon" aria-hidden="true">🛠</span>
+              Backend &amp; Frameworks
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag tag-primary">Node.js</span>
+              <span class="skill-tag tag-python">Django</span>
+              <span class="skill-tag tag-primary">REST APIs</span>
+              <span class="skill-tag tag-primary">Express</span>
+            </div>
+          </div>
+
+          <!-- Systems -->
+          <div class="skill-group reveal">
+            <h3 class="skill-group-title">
+              <span class="group-icon" aria-hidden="true">🔩</span>
+              Systems &amp; OS
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag tag-linux">Linux</span>
+              <span class="skill-tag tag-linux">Unix</span>
+              <span class="skill-tag tag-linux">Shell / Bash</span>
+              <span class="skill-tag tag-linux">Makefile</span>
+              <span class="skill-tag tag-linux">GDB</span>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="skill-group reveal">
+            <h3 class="skill-group-title">
+              <span class="group-icon" aria-hidden="true">🔧</span>
+              Tools &amp; DevOps
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag tag-devops">Git</span>
+              <span class="skill-tag tag-devops">Docker</span>
+              <span class="skill-tag tag-devops">GitHub</span>
+              <span class="skill-tag tag-devops">CI/CD</span>
+            </div>
+          </div>
+
+          <!-- Concepts -->
+          <div class="skill-group reveal skill-group-wide">
+            <h3 class="skill-group-title">
+              <span class="group-icon" aria-hidden="true">🧠</span>
+              CS Fundamentals
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag tag-cs">Algorithms</span>
+              <span class="skill-tag tag-cs">Data Structures</span>
+              <span class="skill-tag tag-cs">Memory Management</span>
+              <span class="skill-tag tag-cs">Pointers</span>
+              <span class="skill-tag tag-cs">Raycasting</span>
+              <span class="skill-tag tag-cs">Process/Signals</span>
+              <span class="skill-tag tag-cs">Networking</span>
+              <span class="skill-tag tag-cs">Concurrency</span>
+            </div>
+          </div>
+
+          <!-- Frontend -->
+          <div class="skill-group reveal">
+            <h3 class="skill-group-title">
+              <span class="group-icon" aria-hidden="true">🎨</span>
+              Frontend
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag tag-web">HTML5</span>
+              <span class="skill-tag tag-web">CSS3</span>
+              <span class="skill-tag tag-js">JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROJECTS ─────────────────────────────────────── -->
+    <section id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="section-label reveal">
+          <span class="label-num">03</span>
+          <span class="label-line" aria-hidden="true"></span>
+          <span class="label-text">Projects</span>
+        </div>
+        <h2 id="projects-heading" class="section-title reveal">Built with precision.</h2>
+
+        <div class="projects-grid">
+
+          <!-- Project 1: cub3D -->
+          <article class="project-card project-featured reveal" aria-label="cub3D project">
+            <div class="project-image">
+              <img src="/website/images/project-1.svg" alt="cub3D: 3D raycasting engine showing a first-person maze corridor" width="600" height="340" loading="lazy">
+              <div class="project-overlay" aria-hidden="true">
+                <span class="project-badge">Featured</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-lang lang-c">C</span>
+                <span class="project-stars" aria-label="2 stars">★ 2</span>
+              </div>
+              <h3 class="project-title">
+                <a href="https://github.com/medob6/cube3D" target="_blank" rel="noopener noreferrer">
+                  cub3D <span class="external-icon" aria-hidden="true">↗</span>
+                </a>
+              </h3>
+              <p class="project-desc">
+                A fully-featured <strong>3D raycasting engine</strong> built in C — inspired by Wolfenstein 3D. Features DDA raycasting, mouse-controlled view, animated doors, a portal system, in-engine video playback via <strong>FFmpeg/libav</strong>, and a GTA-style minimap.
+              </p>
+              <div class="project-tags" aria-label="Technologies used">
+                <span>DDA Algorithm</span>
+                <span>MiniLibX</span>
+                <span>FFmpeg</span>
+                <span>OpenSSL</span>
+                <span>Graphics Programming</span>
+              </div>
+              <a href="https://github.com/medob6/cube3D" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View cub3D on GitHub">
+                View Source
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2: Minishell -->
+          <article class="project-card reveal" aria-label="Minishell project">
+            <div class="project-image">
+              <img src="/website/images/project-2.svg" alt="Minishell: terminal showing bash-compatible shell commands" width="600" height="340" loading="lazy">
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-lang lang-c">C</span>
+                <span class="project-stars" aria-label="1 star">★ 1</span>
+              </div>
+              <h3 class="project-title">
+                <a href="https://github.com/medob6/Minishell" target="_blank" rel="noopener noreferrer">
+                  Minishell <span class="external-icon" aria-hidden="true">↗</span>
+                </a>
+              </h3>
+              <p class="project-desc">
+                A bash-compatible shell in C built as a 42 team project. Implements <strong>pipes, redirections, environment variables, signals</strong>, and built-in commands (cd, echo, env, export, unset, exit). A deep dive into process management and Unix internals.
+              </p>
+              <div class="project-tags" aria-label="Technologies used">
+                <span>Pipes</span>
+                <span>Process Fork</span>
+                <span>Signals</span>
+                <span>Readline</span>
+                <span>Team Project</span>
+              </div>
+              <a href="https://github.com/medob6/Minishell" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Minishell on GitHub">
+                View Source
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3: Pokédex CLI -->
+          <article class="project-card reveal" aria-label="Pokédex CLI project">
+            <div class="project-image project-image-placeholder" aria-label="Pokédex CLI screenshot">
+              <div class="project-placeholder-art" aria-hidden="true">
+                <svg viewBox="0 0 600 340" width="100%">
+                  <rect width="600" height="340" fill="#080810"/>
+                  <!-- Terminal window -->
+                  <rect x="30" y="30" width="540" height="280" fill="#0d0d14" stroke="#2a2a3e" stroke-width="2" rx="4"/>
+                  <!-- Terminal header -->
+                  <rect x="30" y="30" width="540" height="32" fill="#1e1e2e" rx="4" rx="4"/>
+                  <circle cx="50" cy="46" r="3" fill="#ff5555"/>
+                  <circle cx="70" cy="46" r="3" fill="#ffaa00"/>
+                  <circle cx="90" cy="46" r="3" fill="#00ff88"/>
+                  <!-- Terminal text -->
+                  <text x="50" y="90" font-family="'Courier New',monospace" font-size="12" fill="#00d4ff">$ pokdex catch pikachu</text>
+                  <text x="50" y="120" font-family="'Courier New',monospace" font-size="11" fill="#00ff88">[✓] Successfully caught!</text>
+                  <!-- Pokemon ball -->
+                  <circle cx="450" cy="100" r="25" fill="#ff0000"/>
+                  <circle cx="450" cy="100" r="25" fill="#ffffff" clip-path="polygon(0 50%, 100% 50%, 100% 100%, 0 100%)"/>
+                  <!-- More text -->
+                  <text x="50" y="160" font-family="'Courier New',monospace" font-size="10" fill="#94a3b8">pikachu (electric) | height: 0.4m</text>
+                  <text x="50" y="185" font-family="'Courier New',monospace" font-size="10" fill="#94a3b8">Caught: 42 | Explored: 200 locations</text>
+                </svg>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-lang lang-go">Go</span>
+                <span class="project-stars" aria-label="1 star">★ 1</span>
+              </div>
+              <h3 class="project-title">
+                <a href="https://github.com/medob6/pokdexcli" target="_blank" rel="noopener noreferrer">
+                  Pokédex CLI <span class="external-icon" aria-hidden="true">↗</span>
+                </a>
+              </h3>
+              <p class="project-desc">
+                A feature-rich <strong>Pokédex terminal app written in Go</strong> that consumes the PokéAPI. Supports map exploration, Pokémon catching, inspection, and a local cache. A practical exercise in Go concurrency, HTTP clients, and CLI design patterns.
+              </p>
+              <div class="project-tags" aria-label="Technologies used">
+                <span>Go</span>
+                <span>REST API</span>
+                <span>Caching</span>
+                <span>CLI Design</span>
+              </div>
+              <a href="https://github.com/medob6/pokdexcli" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Pokédex CLI on GitHub">
+                View Source
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 4: Game2d -->
+          <article class="project-card reveal" aria-label="Game2d project">
+            <div class="project-image project-image-placeholder" aria-label="Game2D screenshot">
+              <div class="project-placeholder-art" aria-hidden="true">
+                <svg viewBox="0 0 600 340" width="100%">
+                  <rect width="600" height="340" fill="#080810"/>
+                  <!-- Sky -->
+                  <rect width="600" height="170" fill="#1a3a52"/>
+                  <!-- Ground -->
+                  <rect y="170" width="600" height="170" fill="#2d5a1f"/>
+                  <!-- Mountains -->
+                  <polygon points="50,170 150,80 250,170" fill="#1a2f3a"/>
+                  <polygon points="350,170 450,90 550,170" fill="#0f1f2a"/>
+                  <!-- Player character -->
+                  <rect x="280" y="140" width="40" height="50" fill="#00d4ff" rx="4"/>
+                  <circle cx="300" cy="130" r="12" fill="#00d4ff"/>
+                  <!-- Tree -->
+                  <rect x="100" y="130" width="15" height="40" fill="#4a3820"/>
+                  <polygon points="107.5,100 80,135 135,135" fill="#2d5a1f"/>
+                  <!-- Enemy -->
+                  <circle cx="450" cy="140" r="15" fill="#ff6b6b"/>
+                  <!-- Score text -->
+                  <text x="20" y="30" font-family="'Courier New',monospace" font-size="14" fill="#00ff88">Score: 1337</text>
+                </svg>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-lang lang-c">C</span>
+                <span class="project-stars" aria-label="1 star">★ 1</span>
+              </div>
+              <h3 class="project-title">
+                <a href="https://github.com/medob6/Game2d" target="_blank" rel="noopener noreferrer">
+                  Game2D <span class="external-icon" aria-hidden="true">↗</span>
+                </a>
+              </h3>
+              <p class="project-desc">
+                A <strong>2D game built from scratch in C</strong> using a custom mini game engine. Demonstrates sprite rendering, collision detection, game loop architecture, and input handling — all without any game framework.
+              </p>
+              <div class="project-tags" aria-label="Technologies used">
+                <span>C</span>
+                <span>Game Loop</span>
+                <span>Collision</span>
+                <span>Custom Engine</span>
+              </div>
+              <a href="https://github.com/medob6/Game2d" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Game2D on GitHub">
+                View Source
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="projects-footer reveal">
+          <a href="https://github.com/medob6?tab=repositories" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">
+            View all 26 repos on GitHub
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TIMELINE ─────────────────────────────────────── -->
+    <section id="timeline" aria-labelledby="timeline-heading">
+      <div class="container">
+        <div class="section-label reveal">
+          <span class="label-num">04</span>
+          <span class="label-line" aria-hidden="true"></span>
+          <span class="label-text">Journey</span>
+        </div>
+        <h2 id="timeline-heading" class="section-title reveal">The path here.</h2>
+
+        <div class="timeline" role="list">
+
+          <div class="timeline-item reveal" role="listitem">
+            <div class="timeline-marker" aria-hidden="true">
+              <div class="marker-dot"></div>
+              <div class="marker-line"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <span class="timeline-date">2024 – Present</span>
+                <span class="timeline-badge badge-active">In Progress</span>
+              </div>
+              <h3 class="timeline-title">42 Network · 1337 School</h3>
+              <p class="timeline-subtitle">Benguerir, Morocco — Final Stages</p>
+              <p class="timeline-desc">
+                Intensive project-based engineering curriculum. No teachers. No lectures. Pure peer learning, problem-solving, and building. Completed projects spanning Unix systems, graphics programming, network protocols, and team collaboration under real constraints.
+              </p>
+              <div class="timeline-tags">
+                <span>C / C++</span>
+                <span>Unix Programming</span>
+                <span>Peer Learning</span>
+                <span>Systems Design</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal" role="listitem">
+            <div class="timeline-marker" aria-hidden="true">
+              <div class="marker-dot"></div>
+              <div class="marker-line"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <span class="timeline-date">2023 – 2024</span>
+                <span class="timeline-badge badge-done">Completed</span>
+              </div>
+              <h3 class="timeline-title">ALX Backend Engineering Program</h3>
+              <p class="timeline-subtitle">Remote — Africa Leadership X</p>
+              <p class="timeline-desc">
+                Completed the full ALX Backend Engineering track. Went deep on server-side development, database design, REST APIs, authentication, and deployment. Reinforced the professional engineering mindset: deadlines, collaboration, and shipping working software.
+              </p>
+              <div class="timeline-tags">
+                <span>Python</span>
+                <span>Node.js</span>
+                <span>Databases</span>
+                <span>REST APIs</span>
+                <span>Backend Architecture</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal" role="listitem">
+            <div class="timeline-marker" aria-hidden="true">
+              <div class="marker-dot"></div>
+              <div class="marker-line"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <span class="timeline-date">2022 – 2023</span>
+                <span class="timeline-badge badge-done">Completed</span>
+              </div>
+              <h3 class="timeline-title">1337 Piscine &amp; Core Curriculum</h3>
+              <p class="timeline-subtitle">42 Network · Benguerir, Morocco</p>
+              <p class="timeline-desc">
+                The legendary 42 Piscine — an intense 26-day selection process and entry into the core curriculum. Mastered C from scratch, learned memory management, pointers, recursion, and the UNIX philosophy. Foundation that made every future language feel easy.
+              </p>
+              <div class="timeline-tags">
+                <span>C Programming</span>
+                <span>Algorithms</span>
+                <span>Memory Management</span>
+                <span>Git</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal" role="listitem">
+            <div class="timeline-marker" aria-hidden="true">
+              <div class="marker-dot"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <span class="timeline-date">Coming Next</span>
+                <span class="timeline-badge badge-future">Open</span>
+              </div>
+              <h3 class="timeline-title">Software Engineering Internship / Role</h3>
+              <p class="timeline-subtitle">Anywhere that builds real things</p>
+              <p class="timeline-desc">
+                Actively seeking internship and junior engineering opportunities. Looking to bring low-level precision and backend expertise to a team building impactful software. Open to backend, systems, DevOps, or full-stack roles.
+              </p>
+              <div class="timeline-tags">
+                <span>Backend</span>
+                <span>Systems</span>
+                <span>DevOps</span>
+                <span>Open to relocate</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ─────────────────────────────────────── -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-label reveal">
+          <span class="label-num">05</span>
+          <span class="label-line" aria-hidden="true"></span>
+          <span class="label-text">Contact</span>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-text reveal">
+            <h2 id="contact-heading">
+              Let's build<br>
+              <span class="accent">something great.</span>
+            </h2>
+            <p>
+              I'm currently open to <strong>internships, junior roles, and freelance projects</strong>. Whether you have a specific opportunity, want to collaborate on an open-source project, or just want to talk engineering — my inbox is open.
+            </p>
+            <blockquote class="contact-quote">
+              <p>"Consistency beats talent. I'm building my path toward impactful software engineering roles and projects that make a difference."</p>
+            </blockquote>
+          </div>
+
+          <div class="contact-links reveal-right">
+            <a href="mailto:mohamedboussetta601@gmail.com" class="contact-card" aria-label="Send email to Mohamed Boussetta">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <span class="contact-label">Email</span>
+                <span class="contact-value">mohamedboussetta601@gmail.com</span>
+              </div>
+              <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+
+            <a href="https://github.com/medob6" class="contact-card" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub profile">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <span class="contact-label">GitHub</span>
+                <span class="contact-value">github.com/medob6</span>
+              </div>
+              <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+
+            <a href="https://linkedin.com/in/mohamed-boussetta-913609280/" class="contact-card" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <span class="contact-label">LinkedIn</span>
+                <span class="contact-value">Mohamed Boussetta</span>
+              </div>
+              <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+
+            <a href="https://x.com/Mohamed30155499" class="contact-card" target="_blank" rel="noopener noreferrer" aria-label="Visit X (Twitter) profile">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <span class="contact-label">X / Twitter</span>
+                <span class="contact-value">@Mohamed30155499</span>
+              </div>
+              <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────── -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-bracket">[</span>MB<span class="logo-bracket">]</span>
+          <span class="footer-name">Mohamed Boussetta</span>
+        </div>
+        <p class="footer-copy">
+          Built with vanilla HTML, CSS &amp; JS. No frameworks. Just craft.
+        </p>
+        <p class="footer-right">
+          <span class="footer-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            Open to work
+          </span>
+          · Dakhla, Morocco 🇲🇦
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/website/script.js"></script>
+</body>
+</html>

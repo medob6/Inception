@@ -1,0 +1,92 @@
+<svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080810"/>
+      <stop offset="100%" stop-color="#0d0d1a"/>
+    </linearGradient>
+    <filter id="glow3f">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="goGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00ADD8"/>
+      <stop offset="100%" stop-color="#5DC9E2"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="340" fill="url(#bg3)" rx="8"/>
+
+  <!-- Window chrome -->
+  <rect width="600" height="28" fill="#111118" rx="8"/>
+  <rect y="8" width="600" height="20" fill="#111118"/>
+  <circle cx="18" cy="14" r="5" fill="#ff5f57"/>
+  <circle cx="34" cy="14" r="5" fill="#ffbd2e"/>
+  <circle cx="50" cy="14" r="5" fill="#28ca41"/>
+  <text x="300" y="19" font-family="'Courier New', monospace" font-size="10"
+    fill="#4a5568" text-anchor="middle">pokdexcli — terminal pokédex [Go]</text>
+
+  <!-- Terminal body -->
+  <rect x="0" y="28" width="600" height="312" fill="#060608"/>
+
+  <!-- Go gopher-inspired logo (abstract) top right -->
+  <g transform="translate(490,45)" opacity="0.2">
+    <ellipse cx="30" cy="35" rx="28" ry="32" fill="#00ADD8"/>
+    <circle cx="19" cy="22" r="8" fill="white"/>
+    <circle cx="41" cy="22" r="8" fill="white"/>
+    <circle cx="19" cy="23" r="5" fill="#00ADD8"/>
+    <circle cx="41" cy="23" r="5" fill="#00ADD8"/>
+    <ellipse cx="30" cy="55" rx="14" ry="8" fill="#00ADD8"/>
+    <ellipse cx="10" cy="45" rx="7" ry="5" fill="#00ADD8" transform="rotate(-20,10,45)"/>
+    <ellipse cx="50" cy="45" rx="7" ry="5" fill="#00ADD8" transform="rotate(20,50,45)"/>
+  </g>
+
+  <!-- Terminal content -->
+  <g font-family="'Courier New', monospace" font-size="12.5">
+    <text x="20" y="60">
+      <tspan fill="#00ff88">mbousset</tspan>
+      <tspan fill="#4a5568">@</tspan>
+      <tspan fill="#00ADD8">goenv</tspan>
+      <tspan fill="#4a5568">:</tspan>
+      <tspan fill="#7c3aed">~/pokdexcli</tspan>
+      <tspan fill="#e2e8f0">$ go run main.go</tspan>
+    </text>
+
+    <text x="20" y="84" fill="#00ADD8" filter="url(#glow3f)">Welcome to the Pokédex CLI!</text>
+    <text x="20" y="100" fill="#4a5568">Type 'help' for available commands.</text>
+
+    <text x="20" y="124">
+      <tspan fill="#00ADD8">Pokédex</tspan>
+      <tspan fill="#e2e8f0"> > help</tspan>
+    </text>
+
+    <text x="20" y="144" fill="#e2e8f0">Commands:</text>
+    <text x="30" y="160" fill="#7c3aed">  map      </text><text x="120" y="160" fill="#4a5568">— explore location areas</text>
+    <text x="30" y="176" fill="#7c3aed">  catch    </text><text x="120" y="176" fill="#4a5568">— catch a pokémon</text>
+    <text x="30" y="192" fill="#7c3aed">  inspect  </text><text x="120" y="192" fill="#4a5568">— view pokémon details</text>
+    <text x="30" y="208" fill="#7c3aed">  pokedex  </text><text x="120" y="208" fill="#4a5568">— list caught pokémon</text>
+
+    <text x="20" y="232">
+      <tspan fill="#00ADD8">Pokédex</tspan>
+      <tspan fill="#e2e8f0"> > catch pikachu</tspan>
+    </text>
+    <text x="20" y="252" fill="#4a5568">Throwing a Pokéball at pikachu...</text>
+    <text x="20" y="268" fill="#00ff88" filter="url(#glow3f)">✓ pikachu was caught!</tspan>
+
+    <text x="20" y="292">
+      <tspan fill="#00ADD8">Pokédex</tspan>
+      <tspan fill="#e2e8f0"> > inspect pikachu</tspan>
+    </text>
+    <text x="20" y="312">
+      <tspan fill="#e2e8f0">Name: pikachu  |  Type: electric  |  HP: 35  |  XP: 112  </tspan>
+      <tspan fill="#e2e8f0" filter="url(#glow3f)">▋</tspan>
+    </text>
+  </g>
+
+  <!-- Go badge -->
+  <rect x="410" y="280" width="80" height="22" rx="4" fill="#00ADD8" opacity="0.15" stroke="#00ADD8" stroke-width="0.5"/>
+  <text x="450" y="295" font-family="'Courier New', monospace" font-size="10" fill="#00ADD8" text-anchor="middle">Go 1.21+</text>
+
+  <!-- Cache badge -->
+  <rect x="500" y="280" width="85" height="22" rx="4" fill="#7c3aed" opacity="0.15" stroke="#7c3aed" stroke-width="0.5"/>
+  <text x="542" y="295" font-family="'Courier New', monospace" font-size="10" fill="#7c3aed" text-anchor="middle">API caching</text>
+</svg>
